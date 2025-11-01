@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放 - 旅鸟</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">旅鸟</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="casual-notes.html">杂记</a></li>
+                    <li><a href="works.html">一些作品</a></li>
+                    <li><a href="novel.html">同名小说</a></li>
+                    <li><a href="contact.html">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 视频播放区域 -->
+    <section class="video-player-section">
+        <div class="container">
+            <a href="index.html#works" class="back-link">← 返回作品列表</a>
+            
+            <div id="video-content" class="video-content">
+                <h1 id="video-title" class="video-title">城市光影记录</h1>
+                <div class="video-meta">
+                    <span class="video-category">实验性短片</span>
+                    <span class="video-duration">05:42</span>
+                    <span class="video-date">2023.11.20</span>
+                </div>
+                
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="video-poster" style="background-image: url('https://picsum.photos/seed/video1/1200/675');">
+                            <div class="play-button-large">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- 实际项目中这里会有一个视频播放器 -->
+                        <!-- <video controls class="video-player">
+                            <source src="path/to/video.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video> -->
+                    </div>
+                </div>
+                
+                <div class="video-description">
+                    <h2>作品描述</h2>
+                    <p>这是一部关于城市光影变化的实验性短片，通过延时摄影和精心的剪辑，展现了城市在不同时刻、不同光线下的独特魅力。影片拍摄于多个城市的不同地点，记录了日出日落、云卷云舒、人来人往的景象，试图通过光影的变化来表达城市的生命力和时间的流逝。</p>
+                    <p>在快节奏的城市生活中，我们常常忽略了身边这些细微而美丽的变化。这部短片希望能够唤起人们对城市环境的关注，让大家在忙碌的生活中也能停下脚步，欣赏身边的美好。</p>
+                </div>
+                
+                <div class="video-details">
+                    <div class="detail-item">
+                        <h3>创作背景</h3>
+                        <p>灵感来源于对城市生活的观察和思考，希望通过光影的变化来表达城市的节奏和情绪。</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>技术说明</h3>
+                        <p>使用延时摄影技术，结合移动延时和固定延时，捕捉城市在不同时间的光影变化。后期使用达芬奇进行调色，Premiere进行剪辑。</p>
+                    </div>
+                </div>
+                
+                <div class="related-videos">
+                    <h2>相关视频</h2>
+                    <div class="related-videos-grid">
+                        <div class="related-video-item">
+                            <div class="related-video-thumbnail" style="background-image: url('https://picsum.photos/seed/video2/600/338');">
+                                <div class="play-button-small">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3>旅途随想</h3>
+                            <p>记录旅途中的风景与思考</p>
+                        </div>
+                        <div class="related-video-item">
+                            <div class="related-video-thumbnail" style="background-image: url('https://picsum.photos/seed/video3/600/338');">
+                                <div class="play-button-small">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3>时间的痕迹</h3>
+                            <p>延时摄影记录城市的变迁</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">TABITORI</div>
+            <div class="footer-info">
+                <p>旅鸟设计工作室</p>
+                <p>© 2023 TABITORI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 获取URL中的视频ID参数
+        function getVideoId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || '1';
+        }
+
+        // 根据ID加载不同的视频内容
+        function loadVideoContent() {
+            const videoId = getVideoId();
+            const videoTitle = document.getElementById('video-title');
+            const videoPoster = document.querySelector('.video-poster');
+            
+            // 这里可以根据不同的videoId加载不同的视频内容
+            // 简单的模拟，实际项目中可以从数据库或API获取
+            const videoData = {
+                '1': {
+                    title: '城市光影记录',
+                    category: '实验性短片',
+                    duration: '05:42',
+                    date: '2023.11.20',
+                    poster: 'https://picsum.photos/seed/video1/1200/675'
+                },
+                '2': {
+                    title: '旅途随想',
+                    category: '纪录片',
+                    duration: '08:15',
+                    date: '2023.10.30',
+                    poster: 'https://picsum.photos/seed/video2/1200/675'
+                },
+                '3': {
+                    title: '时间的痕迹',
+                    category: '延时摄影',
+                    duration: '03:27',
+                    date: '2023.09.15',
+                    poster: 'https://picsum.photos/seed/video3/1200/675'
+                },
+                '4': {
+                    title: '城市之夜',
+                    category: '夜景摄影',
+                    duration: '06:51',
+                    date: '2023.08.22',
+                    poster: 'https://picsum.photos/seed/video4/1200/675'
+                }
+            };
+            
+            if (videoData[videoId]) {
+                videoTitle.textContent = videoData[videoId].title;
+                videoPoster.style.backgroundImage = `url(${videoData[videoId].poster})`;
+                
+                // 更新视频元数据
+                document.querySelector('.video-category').textContent = videoData[videoId].category;
+                document.querySelector('.video-duration').textContent = videoData[videoId].duration;
+                document.querySelector('.video-date').textContent = videoData[videoId].date;
+            }
+        }
+
+        // 页面加载完成后执行
+        window.addEventListener('DOMContentLoaded', loadVideoContent);
+    </script>
+</body>
+</html>
