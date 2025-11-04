@@ -219,4 +219,29 @@ window.addEventListener('DOMContentLoaded', function() {
     
     // 初始化页面
     init();
+    
+    // 结局分支选择器交互逻辑
+    const branchToggle = document.querySelector('.branch-toggle');
+    if (branchToggle) {
+        const branchOptions = document.querySelector('.branch-options');
+        
+        branchToggle.addEventListener('click', function() {
+            branchOptions.classList.toggle('show');
+            // 切换箭头方向
+            const text = branchToggle.textContent;
+            if (text.includes('▼')) {
+                branchToggle.textContent = text.replace('▼', '▲');
+            } else {
+                branchToggle.textContent = text.replace('▲', '▼');
+            }
+        });
+        
+        // 点击页面其他地方关闭下拉菜单
+        document.addEventListener('click', function(event) {
+            if (!branchToggle.contains(event.target) && !branchOptions.contains(event.target)) {
+                branchOptions.classList.remove('show');
+                branchToggle.textContent = branchToggle.textContent.replace('▲', '▼');
+            }
+        });
+    }
 });

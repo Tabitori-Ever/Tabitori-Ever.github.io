@@ -125,48 +125,93 @@
             const videoId = getVideoId();
             const videoTitle = document.getElementById('video-title');
             const videoPoster = document.querySelector('.video-poster');
+            const videoContainer = document.querySelector('.video-container');
             
-            // 这里可以根据不同的videoId加载不同的视频内容
-            // 简单的模拟，实际项目中可以从数据库或API获取
+            // B站视频数据
             const videoData = {
                 '1': {
-                    title: '城市光影记录',
-                    category: '实验性短片',
-                    duration: '05:42',
-                    date: '2023.11.20',
-                    poster: 'https://picsum.photos/seed/video1/1200/675'
+                    title: '【MAD/初投稿】我们是这样长大的',
+                    category: 'MAD',
+                    duration: '未知',
+                    date: '未知',
+                    poster: '../assets/video/covers/000.jpg',
+                    bilibiliLink: 'https://www.bilibili.com/video/BV1Di93YxEfj/',
+                    description: '这是一个关于成长主题的MAD作品，通过精心剪辑展现了青春与成长的故事。'
                 },
                 '2': {
-                    title: '旅途随想',
-                    category: '纪录片',
-                    duration: '08:15',
-                    date: '2023.10.30',
-                    poster: 'https://picsum.photos/seed/video2/1200/675'
+                    title: '[Yuki生贺/吉他翻弹/White Album]一起填满这空白的相簿吧',
+                    category: '音乐',
+                    duration: '未知',
+                    date: '未知',
+                    poster: '../assets/video/covers/001.jpg',
+                    bilibiliLink: 'https://www.bilibili.com/video/BV1Z5kqYjEfQ/',
+                    description: '为Yuki生日创作的吉他翻弹作品，演绎了经典的White Album曲目。'
                 },
                 '3': {
-                    title: '时间的痕迹',
-                    category: '延时摄影',
-                    duration: '03:27',
-                    date: '2023.09.15',
-                    poster: 'https://picsum.photos/seed/video3/1200/675'
-                },
-                '4': {
-                    title: '城市之夜',
-                    category: '夜景摄影',
-                    duration: '06:51',
-                    date: '2023.08.22',
-                    poster: 'https://picsum.photos/seed/video4/1200/675'
+                    title: '【自学画画一月纪念】被线条和抓型折磨疯的我摸了个硝子',
+                    category: '绘画',
+                    duration: '未知',
+                    date: '未知',
+                    poster: '../assets/video/covers/002.jpg',
+                    bilibiliLink: 'https://www.bilibili.com/video/BV1rLtmzREZA/',
+                    description: '自学画画一个月的纪念作品，记录了绘画学习过程中的挑战与成果。'
                 }
             };
             
             if (videoData[videoId]) {
+                // 更新视频标题
                 videoTitle.textContent = videoData[videoId].title;
-                videoPoster.style.backgroundImage = `url(${videoData[videoId].poster})`;
                 
                 // 更新视频元数据
                 document.querySelector('.video-category').textContent = videoData[videoId].category;
                 document.querySelector('.video-duration').textContent = videoData[videoId].duration;
                 document.querySelector('.video-date').textContent = videoData[videoId].date;
+                
+                // 更新视频描述
+                const descriptionContainer = document.querySelector('.video-description');
+                const descriptionContent = descriptionContainer.querySelector('p');
+                descriptionContainer.innerHTML = `
+                    <h2>作品描述</h2>
+                    <p>${videoData[videoId].description}</p>
+                    <p>简介：暂无</p>
+                `;
+                
+                // 移除创作背景和技术说明
+                const detailsContainer = document.querySelector('.video-details');
+                detailsContainer.style.display = 'none';
+                
+                // 移除相关视频部分
+                const relatedVideosContainer = document.querySelector('.related-videos');
+                relatedVideosContainer.style.display = 'none';
+                
+                // 创建B站视频播放器
+                // 提取BV号
+                const bvMatch = videoData[videoId].bilibiliLink.match(/BV[\w]+/);
+                const bvId = bvMatch ? bvMatch[0] : '';
+                
+                if (bvId) {
+                    // 清除现有的视频占位符
+                    videoContainer.innerHTML = '';
+                    
+                    // 创建B站嵌入播放器
+                    const bilibiliPlayer = document.createElement('iframe');
+                    bilibiliPlayer.src = `https://player.bilibili.com/player.html?bvid=${bvId}&page=1`;
+                    bilibiliPlayer.width = '100%';
+                    bilibiliPlayer.height = '500';
+                    bilibiliPlayer.allowFullscreen = 'true';
+                    bilibiliPlayer.title = videoData[videoId].title;
+                    
+                    // 创建B站链接按钮
+                    const bilibiliLinkButton = document.createElement('a');
+                    bilibiliLinkButton.href = videoData[videoId].bilibiliLink;
+                    bilibiliLinkButton.target = '_blank';
+                    bilibiliLinkButton.className = 'bilibili-link-button';
+                    bilibiliLinkButton.textContent = '在B站观看原视频';
+                    
+                    // 添加到容器
+                    videoContainer.appendChild(bilibiliPlayer);
+                    videoContainer.appendChild(bilibiliLinkButton);
+                }
             }
         }
 

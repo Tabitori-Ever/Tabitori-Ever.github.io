@@ -1,4 +1,4 @@
-﻿/* 全局样式重置 */
+﻿/* 鍏ㄥ眬鏍峰紡閲嶇疆 */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ body {
     height: 100%;
 }
 
-/* 首页特殊样式 */
+/* 棣栭〉鐗规畩鏍峰紡 */
 .index-page {
     height: 100vh;
     overflow-y: auto;
@@ -42,7 +42,7 @@ body {
     overflow: hidden;
 }
 
-/* 背景动态渐变动画 */
+/* 鑳屾櫙鍔ㄦ€佹笎鍙樺姩鐢?*/
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -55,8 +55,8 @@ body {
     }
 }
 
-/* 欢迎界面样式 */
-/* 加载页样式 */
+/* 娆㈣繋鐣岄潰鏍峰紡 */
+/* 鍔犺浇椤垫牱寮?*/
 .loading-screen {
     position: fixed;
     top: 0;
@@ -84,7 +84,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 50rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     padding: 0 2rem;
 }
 
@@ -95,7 +95,7 @@ body {
     text-align: center;
 }
 
-/* 呼吸效果动画 */
+/* 鍛煎惛鏁堟灉鍔ㄧ敾 */
 @keyframes breathing {
     0%, 100% {
         opacity: 0.5;
@@ -109,7 +109,7 @@ body {
     animation: breathing 2s ease-in-out infinite;
 }
 
-/* 响应式调整 */
+/* 鍝嶅簲寮忚皟鏁?*/
 @media (max-width: 768px) {
     .loading-text {
         font-size: 2rem;
@@ -120,11 +120,11 @@ body {
     }
     
     .progress-container {
-        height: 0.25rem;
+        height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     }
 }
 
-/* 顶部导航栏样式 */
+/* 椤堕儴瀵艰埅鏍忔牱寮?*/
 .site-header {
     position: fixed;
     top: 0;
@@ -138,20 +138,20 @@ body {
 
 .site-header.scrolled {
     background-color: rgba(98, 211, 212, 0.6);
-    backdrop-filter: blur(0.625rem);
-    -webkit-backdrop-filter: blur(0.625rem);
+    backdrop-filter: blur( param($match) "$($match.Groups[1].Value / 16)rem" );
+    -webkit-backdrop-filter: blur( param($match) "$($match.Groups[1].Value / 16)rem" );
     padding: 0.8rem 2rem;
-    border-radius: 1.875rem;
-    height: 3.75rem;
-    margin-top: 0.625rem; /* 不吸附上边缘 */
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    margin-top:  param($match) "$($match.Groups[1].Value / 16)rem" ; /* 涓嶅惛闄勪笂杈圭紭 */
 }
 
-/* 保持头部内容原有的布局 */
+/* 淇濇寔澶撮儴鍐呭鍘熸湁鐨勫竷灞€ */
 .site-header.scrolled .header-content {
     justify-content: space-between;
 }
 
-/* logo左移 */
+/* logo宸︾Щ */
 .site-header.scrolled .logo {
     margin-left: -1rem;
 }
@@ -169,7 +169,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     margin: 0 auto;
 }
 
@@ -178,7 +178,7 @@ body {
     font-weight: 700;
     color: #000;
     text-transform: uppercase;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .main-nav ul {
@@ -204,8 +204,8 @@ body {
     content: '';
     position: absolute;
     width: 0;
-    height: 0.125rem;
-    bottom: -0.3125rem;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    bottom: - param($match) "$($match.Groups[1].Value / 16)rem" ;
     left: 0;
     background-color: #000;
     transition: width 0.3s ease;
@@ -215,7 +215,7 @@ body {
     width: 100%;
 }
 
-/* 通用区域样式 */
+/* 閫氱敤鍖哄煙鏍峰紡 */
 section {
     padding: 15rem 4rem;
     position: relative;
@@ -225,13 +225,13 @@ section {
     justify-content: center;
 }
 
-/* 首页特殊样式 - 全屏区域 */
+/* 棣栭〉鐗规畩鏍峰紡 - 鍏ㄥ睆鍖哄煙 */
 .index-page section {
     height: 100vh;
     overflow: hidden;
 }
 
-/* 子页面保持正常排版 */
+/* 瀛愰〉闈繚鎸佹甯告帓鐗?*/
 .works-page section,
 .casual-notes-page section,
 .novel-page section,
@@ -241,7 +241,7 @@ section {
     overflow-y: auto;
 }
 
-/* 下滑指引样式 */
+/* 涓嬫粦鎸囧紩鏍峰紡 */
 .scroll-indicator {
     position: absolute;
     bottom: 3rem;
@@ -254,8 +254,8 @@ section {
 }
 
 .scroll-indicator svg {
-    width: 2.5rem;
-    height: 2.5rem;
+    width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     color: #62D3D4;
 }
 
@@ -270,10 +270,10 @@ section {
         transform: translate(-50%, 0);
     }
     40% {
-        transform: translate(-50%, -1.25rem);
+        transform: translate(-50%, - param($match) "$($match.Groups[1].Value / 16)rem" );
     }
     60% {
-        transform: translate(-50%, -0.625rem);
+        transform: translate(-50%, - param($match) "$($match.Groups[1].Value / 16)rem" );
     }
 }
 
@@ -292,32 +292,32 @@ section h2 {
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 6rem;
-    max-width: 50rem;
-    letter-spacing: -0.0625rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
-/* 简介区域样式 */
+/* 绠€浠嬪尯鍩熸牱寮?*/
 .intro-section {
     background-color: #fff;
 }
 
 .content-block {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax( param($match) "$($match.Groups[1].Value / 16)rem" , 1fr));
     gap: 4rem;
 }
 
 .block-item {
     position: relative;
     padding-bottom: 2rem;
-    border-bottom: 0.0625rem solid #eee;
+    border-bottom:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #eee;
 }
 
 .block-item h3 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .block-item p {
@@ -331,9 +331,9 @@ section h2 {
     position: absolute;
     right: 0;
     bottom: 2rem;
-    width: 3.125rem;
-    height: 3.125rem;
-    border: 0.0625rem solid #000;
+    width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #000;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -342,7 +342,7 @@ section h2 {
 }
 
 .arrow-link::before {
-    content: '→';
+    content: '鈫?;
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -350,10 +350,10 @@ section h2 {
 .arrow-link:hover {
     background-color: #000;
     color: #fff;
-    transform: translateX(0.625rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
-/* 一些作品区域样式 */
+/* 涓€浜涗綔鍝佸尯鍩熸牱寮?*/
 .works-section {
     background-color: #fff;
 }
@@ -367,8 +367,8 @@ section h2 {
 
 .category-tab {
     padding: 0.8rem 2rem;
-    border: 0.0625rem solid #ddd;
-    border-radius: 1.875rem;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #ddd;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -383,7 +383,7 @@ section h2 {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax( param($match) "$($match.Groups[1].Value / 16)rem" , 1fr));
     gap: 4rem;
     margin-bottom: 6rem;
 }
@@ -396,7 +396,7 @@ section h2 {
 }
 
 .video-item:hover {
-    transform: translateY(-0.625rem);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .video-link {
@@ -409,7 +409,7 @@ section h2 {
     aspect-ratio: 16/9;
     background-size: cover;
     background-position: center;
-    border-radius: 0.5rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     position: relative;
     overflow: hidden;
     transition: transform 0.5s ease;
@@ -424,8 +424,8 @@ section h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 5rem;
-    height: 5rem;
+    width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.9);
     display: flex;
@@ -451,7 +451,7 @@ section h2 {
 .video-info h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .video-info p {
@@ -470,7 +470,7 @@ section h2 {
 }
 
 .watch-video:hover {
-    transform: translateX(0.3125rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .view-all {
@@ -482,7 +482,7 @@ section h2 {
     padding: 1rem 3rem;
     background-color: #62D3D4;
     color: #fff;
-    border-radius: 1.875rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -490,16 +490,16 @@ section h2 {
 
 .btn-view-all:hover {
     background-color: #55c2c3;
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.625rem 1.25rem rgba(98, 211, 212, 0.3);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(98, 211, 212, 0.3);
 }
 
-/* 杂记区域样式 */
+/* 鏉傝鍖哄煙鏍峰紡 */
 .casual-notes-section {
     background-color: #f9f9f9;
 }
 
-/* 主要文章样式 */
+/* 涓昏鏂囩珷鏍峰紡 */
 .featured-note {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -513,15 +513,15 @@ section h2 {
 
 .featured-note-bg {
     position: relative;
-    height: 25rem;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     background-size: cover;
     background-position: center;
-    border-radius: 0.75rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
     padding: 2rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
@@ -547,15 +547,15 @@ section h2 {
     font-size: 2.2rem;
     color: white;
     font-weight: 700;
-    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+    text-shadow:  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.5);
     margin: 0;
 }
 
 .featured-note-bg:hover {
-    transform: translateY(-0.3125rem);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
-/* 最新文章列表样式 */
+/* 鏈€鏂版枃绔犲垪琛ㄦ牱寮?*/
 .latest-notes {
     display: flex;
     flex-direction: column;
@@ -568,16 +568,16 @@ section h2 {
     justify-content: space-between;
     padding: 1.5rem;
     background-color: #fff;
-    border-radius: 0.75rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.1);
 }
 
 .latest-note-item:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.12);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.12);
 }
 
 .latest-note-content {
@@ -618,10 +618,10 @@ section h2 {
 }
 
 .latest-note-item:hover .latest-note-arrow {
-    transform: translateX(0.3125rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
-/* 原有样式，保留兼容性 */
+/* 鍘熸湁鏍峰紡锛屼繚鐣欏吋瀹规€?*/
 .notes-list {
     display: flex;
     flex-direction: column;
@@ -631,27 +631,27 @@ section h2 {
 .note-article {
     background-color: #fff;
     padding: 3rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.05);
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .note-article:hover {
-    transform: translateY(-0.625rem);
-    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.08);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.08);
 }
 
 .note-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 0.0625rem solid #eee;
+    border-bottom:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #eee;
 }
 
 .note-header h3 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .note-meta {
@@ -682,7 +682,7 @@ section h2 {
 }
 
 .read-note::after {
-    content: '→';
+    content: '鈫?;
     position: absolute;
     right: 0;
     top: 0;
@@ -694,18 +694,18 @@ section h2 {
 }
 
 .read-note:hover::after {
-    transform: translateX(0.3125rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
-/* 同名小说区域样式 */
+/* 鍚屽悕灏忚鍖哄煙鏍峰紡 */
 .novel-section {
     background-color: #fff;
 }
 
-/* 小说章节页面样式 */
+/* 灏忚绔犺妭椤甸潰鏍峰紡 */
 .novel-chapter-section {
     padding: 4rem 2rem;
-    max-width: 75rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     margin: 0 auto;
 }
 
@@ -719,8 +719,8 @@ section h2 {
 .chapter-content {
     background-color: #fff;
     padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
 }
 
@@ -731,17 +731,17 @@ section h2 {
     color: #444;
 }
 
-/* 对话样式 */
+/* 瀵硅瘽鏍峰紡 */
 .chapter-content p.dialogue {
     text-indent: 0;
     font-style: italic;
     padding: 0.5rem 1rem;
     background-color: #f9f9f9;
-    border-left: 0.1875rem solid #6a93cb;
+    border-left:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #6a93cb;
     margin-bottom: 1rem;
 }
 
-/* 章节导航样式 */
+/* 绔犺妭瀵艰埅鏍峰紡 */
 .chapter-navigation {
     display: flex;
     justify-content: space-between;
@@ -772,8 +772,8 @@ section h2 {
     font-size: 1.1rem;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
-    border: 0.0625rem solid #6a93cb;
-    border-radius: 0.25rem;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #6a93cb;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .chapter-nav-link:hover {
@@ -789,7 +789,7 @@ section h2 {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #666;
-    max-width: 50rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     margin-bottom: 4rem;
     margin-left: 25vw;
 }
@@ -802,7 +802,7 @@ section h2 {
     margin-bottom: 0;
 }
 
-/* 前往阅读按钮样式 */
+/* 鍓嶅線闃呰鎸夐挳鏍峰紡 */
 .view-novel-container {
     text-align: left;
     margin-top: 2rem;
@@ -818,15 +818,15 @@ section h2 {
     font-size: 1.2rem;
     font-weight: 600;
     padding: 1rem 2rem;
-    border: 0.125rem solid #62D3D4;
-    border-radius: 1.875rem;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #62D3D4;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     transition: all 0.3s ease;
 }
 
 .read-novel-arrow:hover {
     background-color: #62D3D4;
     color: #fff;
-    transform: translateX(0.625rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .read-novel-arrow svg {
@@ -834,13 +834,13 @@ section h2 {
 }
 
 .read-novel-arrow:hover svg {
-    transform: translateX(0.3125rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .novel-chapters-container {
     margin-top: 2rem;
     margin-left: 25vw;
-    max-width: 50rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .chapter-header {
@@ -854,18 +854,18 @@ section h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 3rem;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
-/* 结局分支选择器样式 */
+/* 缁撳眬鍒嗘敮閫夋嫨鍣ㄦ牱寮?*/
 .branch-selector {
     position: relative;
 }
 
 .branch-toggle {
     background-color: #f8f9fa;
-    border: 0.0625rem solid #dee2e6;
-    border-radius: 0.375rem;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #dee2e6;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     cursor: pointer;
@@ -884,13 +884,13 @@ section h2 {
     right: 0;
     margin-top: 0.5rem;
     background-color: white;
-    border: 0.0625rem solid #dee2e6;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #dee2e6;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(0, 0, 0, 0.1);
     overflow: hidden;
     z-index: 1000;
     display: none;
-    min-width: 15.625rem;
+    min-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .branch-options.show {
@@ -903,7 +903,7 @@ section h2 {
     color: #343a40;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    border-bottom: 0.0625rem solid #f1f3f5;
+    border-bottom:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #f1f3f5;
 }
 
 .branch-option:last-child {
@@ -914,14 +914,14 @@ section h2 {
     background-color: #f8f9fa;
 }
 
-/* 结局类型样式 */
+/* 缁撳眬绫诲瀷鏍峰紡 */
 .branch-option::before {
     content: '';
     display: inline-block;
-    width: 0.625rem;
-    height: 0.625rem;
+    width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     border-radius: 50%;
-    margin-right: 0.5rem;
+    margin-right:  param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .chapter-items {
@@ -933,16 +933,16 @@ section h2 {
 
 .chapter-item {
     display: grid;
-    grid-template-columns: 9.375rem 1fr;
+    grid-template-columns:  param($match) "$($match.Groups[1].Value / 16)rem"  1fr;
     gap: 2rem;
     padding: 2rem;
     background-color: #f9f9f9;
-    border-radius: 0.75rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     transition: transform 0.3s ease;
 }
 
 .chapter-item:hover {
-    transform: translateY(-0.3125rem);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .chapter-number {
@@ -960,7 +960,7 @@ section h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .chapter-excerpt {
@@ -979,7 +979,7 @@ section h2 {
 }
 
 .read-chapter:hover {
-    transform: translateX(0.3125rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .view-more-chapters {
@@ -989,9 +989,9 @@ section h2 {
 .btn-more-chapters {
     display: inline-block;
     padding: 1rem 3rem;
-    border: 0.0625rem solid #62D3D4;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #62D3D4;
     color: #62D3D4;
-    border-radius: 1.875rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -1002,14 +1002,14 @@ section h2 {
     color: #fff;
 }
 
-/* 视频播放页面样式 */
+/* 瑙嗛鎾斁椤甸潰鏍峰紡 */
 .video-player-section {
     padding: 15rem 4rem;
     background-color: #fff;
 }
 
 .container {
-    max-width: 75rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -1036,7 +1036,7 @@ section h2 {
 .video-title {
     font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: -0.0625rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
     line-height: 1.3;
 }
 
@@ -1048,14 +1048,14 @@ section h2 {
 }
 
 .video-meta span:not(:last-child)::after {
-    content: '•';
+    content: '鈥?;
     margin-left: 2rem;
 }
 
 .video-container {
     width: 100%;
     aspect-ratio: 16/9;
-    border-radius: 0.75rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     overflow: hidden;
     background-color: #000;
     position: relative;
@@ -1076,31 +1076,31 @@ section h2 {
     justify-content: center;
 }
 
-/* B站链接按钮样式 */
+/* B绔欓摼鎺ユ寜閽牱寮?*/
 .bilibili-link-button {
     display: inline-block;
-    margin-top: 1.25rem;
-    padding: 0.75rem 1.875rem;
+    margin-top:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    padding:  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem" ;
     background-color: #FB7299;
     color: white;
     text-decoration: none;
-    border-radius: 1.5625rem;
-    font-size: 1rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    font-size:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 0.125rem solid #FB7299;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #FB7299;
 }
 
 .bilibili-link-button:hover {
     background-color: white;
     color: #FB7299;
-    transform: translateY(-0.125rem);
-    box-shadow: 0 0.25rem 0.75rem rgba(251, 114, 153, 0.3);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(251, 114, 153, 0.3);
 }
 
 .play-button-large {
-    width: 7.5rem;
-    height: 7.5rem;
+    width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.9);
     display: flex;
@@ -1127,7 +1127,7 @@ section h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .video-description p {
@@ -1139,7 +1139,7 @@ section h2 {
 
 .video-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax( param($match) "$($match.Groups[1].Value / 16)rem" , 1fr));
     gap: 3rem;
     margin-bottom: 2rem;
 }
@@ -1148,7 +1148,7 @@ section h2 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .detail-item p {
@@ -1161,12 +1161,12 @@ section h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .related-videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax( param($match) "$($match.Groups[1].Value / 16)rem" , 1fr));
     gap: 2rem;
 }
 
@@ -1178,7 +1178,7 @@ section h2 {
 }
 
 .related-video-item:hover {
-    transform: translateY(-0.3125rem);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .related-video-thumbnail {
@@ -1186,7 +1186,7 @@ section h2 {
     aspect-ratio: 16/9;
     background-size: cover;
     background-position: center;
-    border-radius: 0.5rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     position: relative;
     overflow: hidden;
 }
@@ -1196,8 +1196,8 @@ section h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 3.75rem;
-    height: 3.75rem;
+    width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
+    height:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.9);
     display: flex;
@@ -1217,7 +1217,7 @@ section h2 {
 .related-video-item h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .related-video-item p {
@@ -1225,13 +1225,13 @@ section h2 {
     color: #666;
 }
 
-/* 联系区域样式 */
+/* 鑱旂郴鍖哄煙鏍峰紡 */
 .contact-section {
     background-color: #f9f9f9;
 }
 
 .contact-content {
-    max-width: 50rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .contact-content p {
@@ -1247,11 +1247,11 @@ section h2 {
     gap: 3rem;
 }
 
-/* 联系表单样式 */
+/* 鑱旂郴琛ㄥ崟鏍峰紡 */
 .contact-form {
     margin-top: 6rem;
     width: 100%;
-    max-width: 50rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .contact-form h3 {
@@ -1276,8 +1276,8 @@ section h2 {
 .form-group textarea {
     width: 100%;
     padding: 1.2rem 1.5rem;
-    border: 0.0625rem solid #ddd;
-    border-radius: 0.5rem;
+    border:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #ddd;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     font-size: 1.1rem;
     transition: border-color 0.3s ease;
     background-color: #fff;
@@ -1287,7 +1287,7 @@ section h2 {
 .form-group textarea:focus {
     outline: none;
     border-color: #62D3D4;
-    box-shadow: 0 0 0 0.1875rem rgba(98, 211, 212, 0.1);
+    box-shadow: 0 0 0  param($match) "$($match.Groups[1].Value / 16)rem"  rgba(98, 211, 212, 0.1);
 }
 
 .submit-btn {
@@ -1296,7 +1296,7 @@ section h2 {
     background-color: #62D3D4;
     color: #fff;
     border: none;
-    border-radius: 0.5rem;
+    border-radius:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -1305,8 +1305,8 @@ section h2 {
 
 .submit-btn:hover {
     background-color: #4cc6c8;
-    transform: translateY(-0.125rem);
-    box-shadow: 0 0.5rem 1.25rem rgba(98, 211, 212, 0.3);
+    transform: translateY(- param($match) "$($match.Groups[1].Value / 16)rem" );
+    box-shadow: 0  param($match) "$($match.Groups[1].Value / 16)rem"   param($match) "$($match.Groups[1].Value / 16)rem"  rgba(98, 211, 212, 0.3);
 }
 
 .contact-link {
@@ -1314,14 +1314,14 @@ section h2 {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 0;
-    border-bottom: 0.0625rem solid #eee;
+    border-bottom:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #eee;
     text-decoration: none;
     color: #000;
     transition: all 0.3s ease;
 }
 
 .contact-link:hover {
-    transform: translateX(0.625rem);
+    transform: translateX( param($match) "$($match.Groups[1].Value / 16)rem" );
 }
 
 .contact-link span:first-child {
@@ -1334,15 +1334,15 @@ section h2 {
     color: #666;
 }
 
-/* 底部区域样式 */
+/* 搴曢儴鍖哄煙鏍峰紡 */
 .footer {
     padding: 5rem 4rem;
     background-color: #fff;
-    border-top: 0.0625rem solid #eee;
+    border-top:  param($match) "$($match.Groups[1].Value / 16)rem"  solid #eee;
 }
 
 .footer-content {
-    max-width: 100rem;
+    max-width:  param($match) "$($match.Groups[1].Value / 16)rem" ;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -1353,7 +1353,7 @@ section h2 {
     font-size: 1.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: -0.03125rem;
+    letter-spacing: - param($match) "$($match.Groups[1].Value / 16)rem" ;
 }
 
 .footer-info p {
@@ -1362,7 +1362,7 @@ section h2 {
     line-height: 1.8;
 }
 
-/* 响应式设计 */
+/* 鍝嶅簲寮忚璁?*/
 @media (max-width: 1200px) {
     section {
         padding: 12rem 3rem;
@@ -1374,7 +1374,7 @@ section h2 {
     
     .works-grid,
     .course-categories {
-        grid-template-columns: repeat(auto-fill, minmax(21.875rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax( param($match) "$($match.Groups[1].Value / 16)rem" , 1fr));
     }
 }
 
