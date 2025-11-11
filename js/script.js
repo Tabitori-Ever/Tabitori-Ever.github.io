@@ -78,6 +78,7 @@ window.addEventListener('DOMContentLoaded', function() {
         // 检测滚动事件，实现滚动切换
         let currentSectionIndex = 0;
         const sections = document.querySelectorAll('section');
+        const footer = document.querySelector('footer');
         const totalSections = sections.length;
         let isScrolling = false;
         const SCROLL_DELAY = 800; // 设置为0.8秒只响应一次滚动
@@ -104,14 +105,29 @@ window.addEventListener('DOMContentLoaded', function() {
             setIsScrollingTrue();
             
             // 确定滚动方向并移动到对应section
-            if (e.deltaY > 0 && currentSectionIndex < totalSections - 1) {
+            if (e.deltaY > 0) {
                 // 向下滚动
-                currentSectionIndex++;
-            } else if (e.deltaY < 0 && currentSectionIndex > 0) {
+                if (currentSectionIndex < totalSections - 1) {
+                    currentSectionIndex++;
+                } else if (currentSectionIndex === totalSections - 1 && footer) {
+                    // 如果在最后一个section(联系section)，则滚动到footer
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                    return;
+                } else {
+                    return;
+                }
+            } else if (e.deltaY < 0) {
                 // 向上滚动
-                currentSectionIndex--;
+                if (currentSectionIndex > 0) {
+                    currentSectionIndex--;
+                } else {
+                    return;
+                }
             } else {
-                // 到达边界，不做任何事情
+                // 没有滚动，不做任何事情
                 return;
             }
             
@@ -135,6 +151,13 @@ window.addEventListener('DOMContentLoaded', function() {
                         behavior: 'smooth'
                     });
                     setIsScrollingTrue();
+                } else if (currentSectionIndex === totalSections - 1 && footer) {
+                    // 如果在最后一个section(联系section)，则滚动到footer
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                    setIsScrollingTrue();
                 }
             } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
                 e.preventDefault();
@@ -155,7 +178,16 @@ window.addEventListener('DOMContentLoaded', function() {
             if (isScrolling) return;
             
             const scrollPosition = window.pageYOffset + window.innerHeight / 2;
+            const bodyHeight = document.body.scrollHeight;
             
+            // 检查是否滚动到底部附近
+            if (window.innerHeight + window.pageYOffset >= bodyHeight - 100) {
+                // 保持在最后一个section的索引
+                currentSectionIndex = totalSections - 1;
+                return;
+            }
+            
+            // 检查当前在哪个section
             for (let i = 0; i < totalSections; i++) {
                 const section = sections[i];
                 if (scrollPosition >= section.offsetTop && 
@@ -211,10 +243,27 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // 动画触发函数
+    function triggerIntroAnimation() {
+        const introSection = document.querySelector('.intro-section');
+        if (introSection) {
+            // 添加背景动画
+            introSection.style.animation = 'backgroundReveal 1.2s ease forwards';
+            
+            // 延迟添加组件动画类，确保背景动画先执行
+            setTimeout(() => {
+                introSection.classList.add('animate');
+            }, 300);
+        }
+    }
+    
     // 页面加载完成后初始化
     function init() {
         // 触发一次滚动事件以确保导航栏状态正确
         window.dispatchEvent(new Event('scroll'));
+        
+        // 触发简介区域动画
+        setTimeout(triggerIntroAnimation, 500);
     }
     
     // 初始化页面

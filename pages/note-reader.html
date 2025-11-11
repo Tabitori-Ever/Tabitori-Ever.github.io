@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杂记阅读 - 旅鸟</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+    <script defer>
+        // 杂记文章数据
+        const notes = [
+            { 
+                id: "about-traveler-bird", 
+                title: "何为旅鸟？", 
+                date: "2025.11.04",
+                readTime: "5分钟",
+                content: "### 从最初说起\n\n2020年10月4日，那是高一新入学没多久、国庆假期在家的最后一天，那天晚上，我反复思考着上个月那件天塌了的事，还有前几天国庆节那天发的，那个仅1人可见的只有两个浏览量的说说：\"我和你之间的确不了解……\"，而明天，我又将作为农村贫困的家里唯一的希望前往省重点中学，去完成属于我的奋斗，那几天我都睡不着，混沌的脑子卡在了某个本永远不该出现的死循环，我双手握着手机，含着泪翻完回忆后，把该隐藏的隐藏、舍不得删除的删除，回到自己的QQ个人资料，把已经不合时宜的头像再换掉，昵称思考了很久、打了又删，最终确定在：\"旅鸟\"。\n\n随后，我写了一篇说说，笨拙地想表达孤独的心情，翻到的时候很想销毁，珍贵影像资料如下：\n\n```\n![图片](./最初的旅鸟.png \"最初的旅鸟\")\n```\n\n其实这篇说说里已经介绍了我最早对于旅鸟的想法：即被\"人生如逆旅，我亦是行人\"这句古诗中的旅人形象所感染，认为自己也像旅途中一样没有安定，然后当时正是候鸟迁徙的时候，看到落单的鸟儿在旷野上迷茫地盘旋，便自造一词\"旅鸟\"以自诩。\n\n### 不断深化的意象\n\n但说实话，当时的我并不觉得这个词值得我坚持几年乃至一辈子，甚至有个到某个重要的时刻就强行为自己想一个昵称的怪癖，但我一直认可的，也就儒狮、旅鸟、桑榆下和永旅鸟三个而已，或许其它还有我不记得了，又或是放在当时的经历来看很有意义，这种行为也确实为当时增添了很多趣味。\n\n儒狮是由于我从小比较死板，但又有点成绩好被老师偏爱经常担任班长组长之类管理同学，我自认为很礼貌了，但还是激起了一些矛盾，同时我当时秉承着文明不惹事但不怕动手打架的自威心理，便自诩为儒狮；当然虽然这么说好像我对自己认识很清晰一样，但其实一直只是犯着错，完全不能深入认识并吸取教训。而后来的桑榆下，是后来一直期待回到从前、于是便在桑榆的下面等待故人归来的意思，桑榆既是故乡的意象，也有着\"失之东隅，收之桑榆\"这么一句典在，我真的期盼着有一天能把丢掉的东西，再重新找回；当然，后来知道不仅是丢了，还被弄坏了之后，便不怎么用了，不过说来有趣，高考完后注册了一堆账号，用的都是这个，后来再换成永旅鸟的时候，突然发现换昵称变成了一件成本很大的事，加上本来也懒得想加上实在不如当年有创造力了，到现在基本用的都是永旅鸟这个名字。\n\n把名字再换回永旅鸟，是大一下前后的事了\n\n\n\n### 科学上的定义\n\n### 同名衍生小说\n\n### 永远漂泊下去"
+            },
+            { 
+                id: "white-coat-hypertension", 
+                title: "白大褂高血压", 
+                date: "2025.11.10",
+                readTime: "2分钟",
+                content: "白大褂高血压指的是一些人的应激反应特别敏感，受到白大褂轻微视觉刺激就会释放调节激素升高血压，而激素和血压升高又会进一步放大刺激的影响，长时间无法平静。这种症状具有明显的遗传特性。\n\n所以有一群人就流淌着这样的血脉，对很多事物特别敏感，而且一旦应激，反应就会越来越大，哪怕他们主观想要停止，身体潜意识还是会倔强地坚持，于是就这样矛盾下去，但这是病。\n\n我考试或者面临一下实时的考验时，经常心跳加快、手心出汗、精神异常亢奋，尽管我想要冷静下来，身体也会潜意识地继续下去。"
+            }
+        ];
+
+        // 获取URL参数
+        function getUrlParameter(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(window.location.href);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // 加载文章内容的函数
+        function loadNote() {
+            const noteId = getUrlParameter('id');
+            const note = notes.find(n => n.id === noteId);
+            
+            if (note) {
+                // 更新页面标题和文章标题
+                document.title = `${note.title} - 旅鸟`;
+                document.getElementById('note-title').textContent = note.title;
+                
+                // 更新文章元信息
+                document.getElementById('note-date').textContent = note.date;
+                document.getElementById('note-read-time').textContent = `阅读时间: ${note.readTime}`;
+                
+                // 更新文章内容，支持标题和图片格式
+                const contentElement = document.getElementById('note-text');
+                contentElement.innerHTML = '';
+                
+                const paragraphs = note.content.split('\n\n');
+                paragraphs.forEach(para => {
+                    para = para.trim();
+                    if (para) {
+                        // 检查是否是一级标题 (# 开头)
+                        if (para.startsWith('# ') && !para.startsWith('##')) {
+                            const h1 = document.createElement('h1');
+                            h1.textContent = para.substring(2).trim();
+                            contentElement.appendChild(h1);
+                        }
+                        // 检查是否是三级标题 (### 开头)
+                        else if (para.startsWith('### ')) {
+                            const h3 = document.createElement('h3');
+                            h3.textContent = para.substring(4).trim();
+                            contentElement.appendChild(h3);
+                        }
+                        // 检查是否是代码块
+                        else if (para.startsWith('```') && para.endsWith('```')) {
+                            const codeContent = para.substring(3, para.length - 3).trim();
+                            
+                            // 检查代码块中是否包含Markdown图片
+                            if (codeContent.startsWith('![') && codeContent.includes('](') && codeContent.includes(')')) {
+                                // 解析图片
+                                const altTextMatch = codeContent.match(/\!\[(.*?)\]/);
+                                const pathMatch = codeContent.match(/\((.*?)[ "]/); // 匹配括号内的路径，不包括可能的标题
+                                
+                                if (altTextMatch && pathMatch) {
+                                    const altText = altTextMatch[1];
+                                    let imagePath = pathMatch[1];
+                                    const img = document.createElement('img');
+                                    
+                                    // 确保图片路径正确
+                                    if (imagePath.includes('最初的旅鸟.png')) {
+                                        // 直接使用正确的图片路径
+                                        img.src = '../assets/CasualNotes/最初的旅鸟.png';
+                                    } else if (imagePath.startsWith('./')) {
+                                        img.src = '../assets/CasualNotes/' + imagePath.substring(2);
+                                    } else {
+                                        img.src = imagePath;
+                                    }
+                                    
+                                    // 设置图片样式确保可见并满足需求
+                                    img.alt = altText;
+                                    img.style.display = 'block'; // 使图片成为块级元素以便居中
+                                    img.style.maxWidth = '50%'; // 宽度缩小为一半
+                                    img.style.height = 'auto'; // 保持宽高比
+                                    img.style.margin = '1rem auto'; // 上下边距1rem，左右自动（居中）
+                                    
+                                    contentElement.appendChild(img);
+                                }
+                            } else {
+                                // 普通代码块
+                                const codeBlock = document.createElement('pre');
+                                codeBlock.textContent = codeContent;
+                                codeBlock.style.backgroundColor = '#f5f5f5';
+                                codeBlock.style.padding = '1rem';
+                                codeBlock.style.borderRadius = '0.5rem';
+                                codeBlock.style.overflowX = 'auto';
+                                codeBlock.style.fontFamily = 'monospace';
+                                codeBlock.style.margin = '1rem 0';
+                                contentElement.appendChild(codeBlock);
+                            }
+                        }
+                        // 检查是否是图片 (![开头)
+                        else if (para.startsWith('![') && para.includes('](') && para.includes(')')) {
+                            // 简单的Markdown图片解析
+                            const altText = para.match(/!\[(.*?)\]/)[1];
+                            const imagePath = para.match(/\((.*?)\)/)[1];
+                            const img = document.createElement('img');
+                            img.src = imagePath;
+                            img.alt = altText;
+                            contentElement.appendChild(img);
+                        }
+                        // 普通段落
+                        else {
+                            const p = document.createElement('p');
+                            p.textContent = para;
+                            contentElement.appendChild(p);
+                        }
+                    }
+                });
+            } else {
+                // 如果找不到文章，显示错误信息
+                document.getElementById('note-title').textContent = '文章未找到';
+                document.getElementById('note-meta').style.display = 'none';
+                document.getElementById('note-text').textContent = '抱歉，请求的文章不存在。';
+            }
+        }
+        
+        // 页面加载时执行
+        document.addEventListener('DOMContentLoaded', loadNote);
+    </script>
+</head>
+<body class="note-reader-page">
+    <!-- 顶部导航栏 -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo-link">
+                <div class="logo">旅鸟</div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="casual-notes.html">杂记</a></li>
+                    <li><a href="works.html">一些作品</a></li>
+                    <li><a href="novel.html">同名小说</a></li>
+                    <li><a href="contact.html">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 杂记文章内容 -->
+    <section id="note-content" class="note-reader-section">
+        <h2 id="note-title">文章标题</h2>
+        
+        <div id="note-meta" class="note-meta">
+            <span id="note-date" class="note-date"></span>
+            <span id="note-read-time" class="note-read-time"></span>
+        </div>
+        
+        <div class="note-content">
+            <div id="note-text">文章内容将根据URL参数动态加载...</div>
+        </div>
+        
+        <div class="note-navigation">
+            <a href="casual-notes.html" class="back-to-notes">返回杂记列表</a>
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">旅鸟 TABITORI</div>
+            <div class="footer-info">
+                <p>一个迷茫的人试图诉说</p>
+                <p>© 2025 TABITORI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* Logo链接样式 */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
 html {
     scroll-behavior: smooth;
     height: 100%;
@@ -227,7 +234,7 @@ section {
 
 /* 首页特殊样式 - 全屏区域 */
 .index-page section {
-    height: 100vh;
+    height: 103.65vh;
     overflow: hidden;
 }
 
@@ -298,7 +305,93 @@ section h2 {
 
 /* 简介区域样式 */
 .intro-section {
-    background-color: #fff;
+    background-image: url('../assets/img/mainpage.jpg');
+    background-size: 100%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;  
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* 背景动画初始状态 */
+    opacity: 0;
+    /* 呼吸动画效果 */
+    animation: breathingEffect 3s ease-in-out infinite;
+}
+
+/* 呼吸动画效果 - 同时控制不透明度和模糊度 */
+@keyframes breathingEffect {
+    0%, 100% {
+        filter: blur(1rem);
+        opacity: 0.5;
+    }
+    50% {
+        filter: blur(0rem);
+        opacity: 0.9;
+    }
+}
+
+/* 文字块模糊背景 */
+.content-block .block-item {
+    background: rgba(255, 255, 255, 0.93); /* 10% 不透明度的白色背景 */
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* 右下阴影效果 */
+    box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* 背景动画 */
+@keyframes backgroundReveal {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 组件从左到右动画 */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 为简介区域的元素添加动画 */
+.intro-section.animate .section-number {
+    animation: slideInRight 0.8s ease forwards 0.2s;
+}
+
+.intro-section.animate h2 {
+    animation: slideInRight 0.8s ease forwards 0.4s;
+}
+
+.intro-section.animate .content-block {
+    animation: slideInRight 0.8s ease forwards 0.6s;
+}
+
+.intro-section.animate .scroll-indicator {
+    animation: slideInRight 0.8s ease forwards 0.8s;
+}
+
+/* 设置初始隐藏状态 */
+.intro-section .section-number,
+.intro-section h2,
+.intro-section .content-block,
+.intro-section .scroll-indicator {
+    opacity: 0;
 }
 
 .content-block {
@@ -329,7 +422,7 @@ section h2 {
 
 .arrow-link {
     position: absolute;
-    right: 0;
+    right: 1rem;
     bottom: 2rem;
     width: 3.125rem;
     height: 3.125rem;
@@ -499,9 +592,13 @@ section h2 {
     background-color: #f9f9f9;
 }
 
+.casual-notes-section h2 {
+    margin-bottom: 2rem;
+}
+
 /* 主要文章样式 */
 .featured-note {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 3rem;
 }
 
@@ -747,6 +844,127 @@ section h2 {
     justify-content: space-between;
     align-items: center;
     margin-top: 3rem;
+}
+
+/* 杂记阅读页面样式 */
+.note-reader-section {
+    padding: 4rem 2rem;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.note-reader-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.note-reader-section .note-meta {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #666;
+    font-size: 1rem;
+}
+
+.note-reader-section .note-meta span {
+    margin: 0 1rem;
+}
+
+.note-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.note-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-indent: 2em;
+    color: #444;
+}
+
+/* 杂记列表页面链接样式 */
+.note-title a,
+.note-read-more {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.note-title a:hover,
+.note-read-more:hover {
+    color: #6a93cb;
+}
+
+/* 杂记导航样式 */
+.note-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.back-to-notes {
+    color: #6a93cb;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* 文章标题样式 */
+.note-content h1 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-indent: 0;
+}
+
+.note-content h3 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem 0;
+    color: #333;
+    text-indent: 0;
+}
+
+/* 文章图片样式 */
+.note-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* 代码块样式 */
+.note-content pre {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.note-content code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+    background-color: #f8f9fa;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.25rem;
+}
+
+.back-to-notes:hover {
+    color: #fff;
+    background-color: #6a93cb;
 }
 
 .back-to-chapters {
