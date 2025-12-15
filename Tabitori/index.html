@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅鸟 - Tabitori</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body class="index-page">
+    <!-- 全屏加载界面 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <h1 id="loading-text" class="loading-text breathing-text">欢迎你的旅程</h1>
+        </div>
+    </div>
+    <!-- 顶部导航栏 -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">旅鸟</div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="pages/casual-notes.html">杂记</a></li>
+                    <li><a href="pages/works.html">一些作品</a></li>
+                    <li><a href="pages/novel.html">同名小说</a></li>
+                    <li><a href="pages/contact.html">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 简介区域 -->
+    <section id="intro" class="intro-section">
+        <!-- 下滑指引 -->
+        <div class="scroll-indicator" data-target="#CasualNotes">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
+            </svg>
+        </div>
+        <div class="section-number">01</div>
+        <h2>开启你的漂泊之旅</h2>
+        
+        <div class="content-block">
+            <div class="block-item">
+                <h3>杂记</h3>
+                <p>一些对我的人生、这个世界的一些闲话</p>
+                <a href="pages/casual-notes.html" class="arrow-link"></a>
+            </div>
+            
+            <div class="block-item">
+                <h3>一些作品</h3>
+                <p>我曾经做的一些视频作品</p>
+                <a href="pages/works.html" class="arrow-link"></a>
+            </div>
+            
+            <div class="block-item">
+                <h3>同名小说</h3>
+                <p>试着将旅鸟用一个故事表达</p>
+                <a href="pages/novel.html" class="arrow-link"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 杂记区域 -->
+    <section id="CasualNotes" class="casual-notes-section" style="margin-top: -50px;">
+        <!-- 下滑指引 -->
+        <div class="scroll-indicator" data-target="#works">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
+            </svg>
+        </div>
+        <h2>杂记</h2>
+        
+        <!-- 主要文章：何为旅鸟？ -->
+        <div class="featured-note" style="margin-bottom: 2rem;">
+            <a href="pages/casual-notes.html?id=about-traveler-bird" class="featured-note-link">
+                <div class="featured-note-bg" style="background-image: url('assets/img/何为旅鸟.jpg'); border-top: none; border-left: none; border-right: none; height: 50rem; width: 100%;"></div>
+                <!-- 渐变白色区域放简介 -->
+                <div style="background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,1)); padding: 2rem; margin-top: -30px; position: relative; z-index: 1;">
+                    <p class="note-summary" style="color: #333; margin: 0;">2020年10月4日，那是高一新入学没多久、国庆假期在家的最后一天，那天晚上，我反复思考着上个月那件天塌了的事，还有前几天国庆节那天发的，那个仅1人可见的只有两个浏览量的说说："我和你之间的确不了解……"，而明天，我又将作为农村贫困的家里唯一的希望前往省重点中学，去完成属于我的奋斗，那几天我都睡不着，混沌的脑子卡在了某个本永远不该出现的死循环，我双手握着手机，含着泪翻完回忆后，把该隐藏的隐藏、舍不得删除的删除，回到自己的QQ个人资料，把已经不合时宜的头像再换掉，昵称思考了很久、打了又删，最终确定在："旅鸟"。</p>
+                </div>
+            </a>
+        </div>
+        
+        <!-- 新增文章 -->
+        <div class="latest-notes">
+            <!-- 最新文章 -->
+            <a href="pages/casual-notes.html?id=white-coat-hypertension" class="latest-note-item">
+                <div class="latest-note-content">
+                    <div class="latest-note-header">
+                        <span class="latest-note-title">【趣闻01】白大褂高血压</span>
+                        <span class="latest-note-meta">2025.11.10 · 阅读时间：3分钟</span>
+                    </div>
+                    <p class="latest-note-excerpt">趣闻01-白大褂高血压：指有些人在医生诊所测量血压时会出现血压升高的现象，但在其他环境中血压正常。这种现象可能与紧张情绪有关。</p>
+                </div>
+                <span class="latest-note-arrow">></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 一些作品区域 -->
+    <section id="works" class="works-section">
+        <!-- 下滑指引 -->
+        <div class="scroll-indicator" data-target="#novel">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
+            </svg>
+        </div>
+        <div class="section-number">03</div>
+        <h2>一些作品</h2>
+        
+        <div class="works-categories">
+            <div class="category-tab active">全部</div>
+            <div class="category-tab">MAD</div>
+            <div class="category-tab">绘画</div>
+            <div class="category-tab">吉他</div>
+            <div class="category-tab">Vocaloid</div>
+        </div>
+        
+        <div class="video-grid">
+            <!-- B站视频1 -->
+            <div class="video-item">
+                <a href="pages/video-player.html?id=1" class="video-link">
+                    <div class="video-thumbnail" style="background-image: url('assets/video/covers/000.jpg');">
+                        <div class="play-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <div class="video-info">
+                    <h3>【MAD/初投稿】我们是这样长大的</h3>
+                    <p>B站初投稿视频</p>
+                    <a href="pages/video-player.html?id=1" class="watch-video">观看视频</a>
+                </div>
+            </div>
+            
+            <!-- B站视频2 -->
+            <div class="video-item">
+                <a href="pages/video-player.html?id=2" class="video-link">
+                    <div class="video-thumbnail" style="background-image: url('assets/video/covers/001.jpg');">
+                        <div class="play-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <div class="video-info">
+                    <h3>[Yuki生贺/吉他翻弹/White Album]一起填满这空白的相簿吧</h3>
+                    <p>吉他翻弹作品</p>
+                    <a href="pages/video-player.html?id=2" class="watch-video">观看视频</a>
+                </div>
+            </div>
+            
+            <!-- B站视频3 -->
+            <div class="video-item">
+                <a href="pages/video-player.html?id=3" class="video-link">
+                    <div class="video-thumbnail" style="background-image: url('assets/video/covers/002.jpg');">
+                        <div class="play-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <div class="video-info">
+                    <h3>【自学画画一月纪念】被线条和抓型折磨疯的我摸了个硝子</h3>
+                    <p>绘画作品记录</p>
+                    <a href="pages/video-player.html?id=3" class="watch-video">观看视频</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-all">
+            <a href="pages/works.html" class="btn-view-all">查看全部作品</a>
+        </div>
+    </section>
+
+    <!-- 同名小说区域 -->
+    <section id="novel" class="novel-section">
+        <!-- 下滑指引 -->
+        <div class="scroll-indicator" data-target="#contact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
+            </svg>
+        </div>
+        <div class="section-number">04</div>
+        <h2>旅鸟 · 同名小说</h2>
+        
+        <div class="novel-intro">
+            <p>一只在空中徘徊的落单鸟儿，渴望着栖息地温暖的怀抱。</p>
+            <p>通信科学技术专业学生苏桐一次又一次地受挫，在大三下被原本定好的技术研抛弃后，对未来彻底陷入了迷茫，成了彻底的失路之人，如同一只永远的旅鸟，一直在他乡求索栖息之地。由于大四马上要决定升学去向了，她在友人推荐下随便进了一个理论研，并真的收获了栖息地一样的温暖，但这里真的是她的栖息地吗？好景会持续多久呢？她能摆脱旅鸟的命运吗？</p>
+            <p>在四个结局里，我们将见证飞向遥远的天空的理想，也会陷入盘旋陌地的迷茫，坠落他乡，又或最终找到温暖的园地。</p>
+            <p>期待您阅读这段故事，从中找到飞翔的方向。</p>
+        </div>
+        
+        <div class="view-novel-container">
+            <a href="pages/novel.html" class="read-novel-arrow">
+                <span>前往阅读</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section id="contact" class="contact-section">
+        <div class="section-number">05</div>
+        <h2>联系我</h2>
+        
+        <div class="contact-content">
+            <p>这个网站正在建设中，如果你有任何想法或建议，或者想参与建设，欢迎随时联系我。</p>
+            <div class="contact-methods">
+                <a href="mailto:contact@tabitori.com" class="contact-link">
+                    <span>邮箱</span>
+                    <span>yongluniao@gmail.com</span>
+                </a>
+                <a href="#" class="contact-link">
+                    <span>Bilibili</span>
+                    <span>永旅鸟 uid=481777377</span>
+                </a>
+                <a href="#" class="contact-link">
+                    <span>QQ</span>
+                    <span>1992240893</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">旅鸟 TABITORI</div>
+            <div class="footer-info">
+                <p>一个迷茫的人试图诉说</p>
+                <p>© 2025 TABITORI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
